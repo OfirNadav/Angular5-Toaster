@@ -1,0 +1,15 @@
+node_modules
+src/node_modules
+npm-debug.log
+coverage
+lib
+#dist
+build
+typings
+src/*.js
+src/*.map
+src/*.d.ts
+src/*.ngfactory.ts
+angular5-toaster.d.ts
+demo/webpack/bundle.js
+demo/webpack/bundle.js.map
