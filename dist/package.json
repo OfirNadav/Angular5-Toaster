@@ -2,12 +2,14 @@
   "name": "angular5-toaster",
   "version": "5.0.0",
   "description": "An Angular Toaster Notification library based on AngularJS-Toaster",
-  "main": "./dist/bundles/angular5-toaster.umd.js",
-  "module": "./dist/angular5-toaster.js",
+  "main": "./dist/angular5-toaster.js",
   "typings": "./dist/angular5-toaster.d.ts",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "start": "npm run test && http-server -c-1 -o -p 8875 .",
-    "prebuild": "rimraf ./dist",
+    "prebuild": "rimraf ./dist && npm run lint",
     "build": "node_modules/.bin/ngc -p ./tsconfig-aot.json && npm run rollup",
     "rollup": "node_modules/.bin/rollup -c ./config/rollup.config.js && npm run uglify",
     "uglify": "node_modules/.bin/uglifyjs ./dist/bundles/angular5-toaster.umd.js -o ./dist/bundles/angular5-toaster.umd.min.js && npm run copy",
@@ -77,10 +79,14 @@
     "source-map-loader": "0.2.0",
     "ts-helpers": "1.1.2",
     "tslint": "5.3.2",
-    "typescript": "2.4.2",
+    "typescript": "2.6.2",
     "typings": "2.1.0",
     "uglify-js": "2.8.18",
     "webpack": "2.3.2",
     "zone.js": "0.8.5"
+  },
+  "dependencies": {
+    "@angular/cdk": "^5.0.3",
+    "@angular/material": "^5.0.3"
   }
 }
