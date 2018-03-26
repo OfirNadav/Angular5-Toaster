@@ -2,14 +2,11 @@
   "name": "angular5-toaster",
   "version": "5.0.0",
   "description": "An Angular Toaster Notification library based on AngularJS-Toaster",
-  "main": "./dist/angular5-toaster.js",
+  "main": "./dist/bundles/angular5-toaster.umd.js",
   "typings": "./dist/angular5-toaster.d.ts",
-  "files": [
-    "dist"
-  ],
   "scripts": {
     "start": "npm run test && http-server -c-1 -o -p 8875 .",
-    "prebuild": "rimraf ./dist && npm run lint",
+    "prebuild": "rimraf ./dist",
     "build": "node_modules/.bin/ngc -p ./tsconfig-aot.json && npm run rollup",
     "rollup": "node_modules/.bin/rollup -c ./config/rollup.config.js && npm run uglify",
     "uglify": "node_modules/.bin/uglifyjs ./dist/bundles/angular5-toaster.umd.js -o ./dist/bundles/angular5-toaster.umd.min.js && npm run copy",
